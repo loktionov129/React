@@ -1,0 +1,9 @@
+.App {
+  background-color: #fefefe;
+  div {
+    color: red;
+    &:hover {
+      color: darkblue;
+    }
+  }
+}
