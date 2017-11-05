@@ -1,31 +1,22 @@
 import * as React from 'react';
+import store from '../state';
 import './App.scss';
 
-export interface AppState {
-  count: number;
-}
-
-export default class App extends React.Component<{}, AppState> {
-  intervalId: number;
-  state = { count: 0 };
-
-  // This state will be maintained during hot reloads
-  componentWillMount() {
-    this.intervalId = window.setInterval(() => {
-      this.setState({ count: this.state.count + 1 });
-    }, 1000);
-  }
-
-  componentWillUnmount() {
-    window.clearInterval(this.intervalId);
-  }
+class Main extends React.Component<{}, {}> {
 
   render() {
     return (
-      <div className='App'>
-        <h1>Hello world!</h1>
-        <div>Welcome to hot-reloading React written in TypeScript! {this.state.count}</div>
-      </div>
+      <h1>Hello React!</h1>
     );
   }
 }
+
+const App = () => (<Main />);
+export default App;
+
+console.warn(store.getState());
+store.subscribe(() => console.warn('new state:::', store.getState()));
+
+store.dispatch({type: 'INCREASE_COUNTER'});
+store.dispatch({type: 'LOAD_HEROES'});
+store.dispatch({type: 'INCREASE_COUNTER'});
