@@ -1,0 +1,21 @@
+{
+  "name": "example-rest",
+  "version": "1.0.0",
+  "description": "Mongo + Express",
+  "main": "server/index.js",
+  "scripts": {
+    "start": "nodemon index.js --config nodemon.json"
+  },
+  "author": "loktionov129 <loktionov129@gmail.com>",
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "^1.18.2",
+    "cors": "^2.8.4",
+    "express": "^4.16.2",
+    "mongodb": "^2.2.33",
+    "mongoose": "^4.13.4"
+  },
+  "devDependencies": {
+    "nodemon": "^1.12.1"
+  }
+}
