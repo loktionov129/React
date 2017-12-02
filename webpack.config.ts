@@ -62,7 +62,8 @@ const config: webpack.Configuration = {
   },
 
   devServer: {
-    hot: true
+    hot: true,
+    disableHostCheck: true
   }
 
 };
