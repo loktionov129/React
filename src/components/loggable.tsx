@@ -6,7 +6,9 @@ export interface LoggableParams {
   locale?: string;
 }
 
-const Loggable = ({displayTime = true, enable = false, locale = 'ru'}: LoggableParams) => (Comp: any) => {
+const defaultParams = {displayTime: true, enable: true, locale: 'ru'};
+
+const Loggable = ({displayTime, enable, locale}: LoggableParams = defaultParams) => (Comp: any) => {
   if (!enable) {
     return Comp;
   }
